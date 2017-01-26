@@ -9,7 +9,9 @@ namespace Bank_Account
     class Checking : Account
     {
         //fields for checking
-        protected int runningBalance;
+        protected decimal checkingBalance;
+        private decimal checkingDeposit;
+        private decimal checkingWithdraw;
 
     }
 }

@@ -9,7 +9,9 @@ namespace Bank_Account
     class Reserve : Account
     {
         //fields for reserve 
-        protected int runningBalance;
+        protected decimal reserveBalance;
+        private decimal reserveDeposit;
+        private decimal reserveWithdraw;
 
     }
 }

@@ -9,6 +9,8 @@ namespace Bank_Account
     class Savings : Account
     {
         //fields for savings
-        protected int runningBalance;
+        protected decimal savingsBalance;
+        private decimal savingsDeposit;
+        private decimal savingsWithdraw;
     }
 }
