@@ -30,7 +30,19 @@ namespace Bank_Account
         }
 
         //constructor base class
+        public Account()
+        {
 
+        }
+    
+        public Account(string firstName,string lastName,string accountType,int accountNmbr,decimal balance)
+        {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.accountType = accountType;
+            this.accountNmbr = accountNmbr;
+            this.balance = balance;
+        }
 
         //method base class
 
