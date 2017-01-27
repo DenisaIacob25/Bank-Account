@@ -9,34 +9,34 @@ namespace Bank_Account
     class Checking : Account
     {
         //fields for checking
-        protected decimal checkingBalance;
-        private decimal checkingDeposit;
-        private decimal checkingWithdraw;
+        protected float checkingBalance;
+        private int checkingAccountNmbr;
 
-        //constructor
-        public decimal CheckingBalance
+        //properties
+        public float CheckingBalance
         {
             get { return this.checkingBalance; }
             set { this.checkingBalance = value; }
         }
-        public decimal CheckingDeposit
+        public int CheckingAccountNmbr
         {
-            get { return this.checkingDeposit; }
-            set { this.checkingDeposit = value; }
+            get { return this.checkingAccountNmbr; }
+            set { this.checkingAccountNmbr = value; }
         }
-        public decimal CheckingWithdraw
-        {
-            get { return this.checkingWithdraw; }
-            set { this.checkingWithdraw = value; }
-        }
+        
 
         //constructor
         public Checking()
         {
-            CheckingBalance = this.checkingBalance;
-            CheckingDeposit = this.checkingDeposit;
-            CheckingWithdraw = this.checkingWithdraw;
+            
         }
 
+        public override void CheckingDeposit(float depostiAmount)
+        {
+            base.PrintAccountInfo();
+            Console.WriteLine("Cheking balance: $"+CheckingBalance);
+            
+            checkingBalance += depostiAmount;
+        }
     }
 }

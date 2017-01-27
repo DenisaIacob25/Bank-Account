@@ -9,33 +9,24 @@ namespace Bank_Account
     class Savings : Account
     {
         //fields for savings
-        protected decimal savingsBalance;
-        private decimal savingsDeposit;
-        private decimal savingsWithdraw;
+        protected float savingsBalance;
+        private int savingsAccountNmbr;
 
         //properties 
-        public decimal SavingsBalance
+        public float SavingsBalance
         {
             get { return this.savingsBalance; }
             set { this.savingsBalance = value; }
         }
-        public decimal SavingsDeposit
+        public int SavingsAccountNmbr
         {
-            get { return this.savingsDeposit; }
-            set { this.savingsDeposit = value; }
+            get { return this.savingsAccountNmbr; }
+            set { this.savingsAccountNmbr = value; }
         }
-        public decimal SavingsWithdraw
-        {
-            get { return this.savingsWithdraw; }
-            set { this.savingsWithdraw = value; }
-        }
-
+    
         //constructor 
         public Savings()
-        {
-            SavingsBalance = this.savingsBalance;
-            SavingsDeposit = this.savingsDeposit;
-            SavingsWithdraw = this.savingsWithdraw;
+        { 
         }
     }
 }

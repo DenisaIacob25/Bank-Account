@@ -9,34 +9,26 @@ namespace Bank_Account
     class Reserve : Account
     {
         //fields for reserve 
-        protected decimal reserveBalance;
-        private decimal reserveDeposit;
-        private decimal reserveWithdraw;
+        protected float reserveBalance;
+        private int reserveAccountNmbr;
 
         //properties 
-        public decimal ReserveBalance
+        public float ReserveBalance
         {
             get { return this.reserveBalance; }
             set { this.reserveBalance = value; }
         }
-        public decimal ReserveDeposit
+        public int ReserveAccountNmbr
         {
-            get { return this.reserveDeposit; }
-            set { this.reserveDeposit = value; }
-        }
-        public decimal ReserveWithdraw
-        {
-            get { return this.reserveWithdraw; }
-            set { this.reserveWithdraw = value; }
+            get { return this.reserveAccountNmbr; }
+            set { this.reserveAccountNmbr = value; }
         }
 
         //constructor 
 
         public Reserve()
         {
-            ReserveBalance = this.reserveBalance;
-            ReserveDeposit = this.reserveDeposit;
-            ReserveWithdraw = this.reserveWithdraw;
+            
         }
 
     }
