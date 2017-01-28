@@ -26,17 +26,28 @@ namespace Bank_Account
         
 
         //constructor
-        public Checking()
+        public Checking(string firstName, string lastName):base(firstName,lastName)
         {
-            
+            this.checkingBalance = 0f;
+            this.checkingAccountNmbr = 67788;
         }
 
-        public override void CheckingDeposit(float depostiAmount)
+        //methods
+        public override float Deposit(float depostiAmount)
         {
-            base.PrintAccountInfo();
-            Console.WriteLine("Cheking balance: $"+CheckingBalance);
-            
-            checkingBalance += depostiAmount;
+            this.checkingBalance += depostiAmount;
+            return base.Deposit(depostiAmount);
+        }
+
+        public override float Withdraw(float withdrawAmount)
+        {
+            this.checkingBalance -= withdrawAmount;
+            return base.Withdraw(withdrawAmount);
+        }
+
+        public override void PrintAccountBalance()
+        {
+            Console.WriteLine("Savings account balance: $" + CheckingBalance);
         }
     }
 }

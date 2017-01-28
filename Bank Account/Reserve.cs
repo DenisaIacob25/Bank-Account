@@ -26,9 +26,26 @@ namespace Bank_Account
 
         //constructor 
 
-        public Reserve()
+        public Reserve(string firstName,string lastName):base (firstName,lastName)
         {
-            
+            this.reserveBalance = 0f;
+            this.reserveAccountNmbr = 34234;
+        }
+
+        //methods
+        public override float Deposit(float depositAmount)
+        {
+            this.reserveBalance += depositAmount;
+            return base.Deposit(depositAmount);
+        }
+        public override float Withdraw(float withdrawAmount)
+        {
+            this.reserveBalance -= withdrawAmount;
+            return base.Withdraw(withdrawAmount);
+        }
+        public override void PrintAccountBalance()
+        {
+            Console.WriteLine("Reserve account balance: $" + ReserveBalance);
         }
 
     }

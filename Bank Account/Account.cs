@@ -12,11 +12,21 @@ namespace Bank_Account
         private string firstName;
         private string lastName;
 
-        private int accountNmbr;
-        private float balance;
+        private int accountNmbr= 54546;
+        private float accountBalance=0.00f;
         
 
         //properties in base class
+        public string FirstName
+        {
+            get { return this.firstName; }
+            set { this.firstName = value; }
+        }
+        public string LastName
+        {
+            get { return this.lastName; }
+            set { this.lastName = value; }
+        }
         public int AccountNmbr
         {
             get { return this.accountNmbr; }
@@ -24,25 +34,36 @@ namespace Bank_Account
         }
 
         //constructor base class
-        public Account()
-        {
-
-        }
     
-        public Account(string firstName,string lastName,int accountNmbr,float balance)
+        public Account(string firstName,string lastName)
         {
-            this.firstName = firstName;
-            this.lastName = lastName;
-            this.accountNmbr = accountNmbr;
-            this.balance = balance;
+            this.FirstName = firstName;
+            this.LastName = lastName;
+           
         }
 
         //method base class
-        public virtual void PrintAccountInfo()
+        public virtual float Deposit(float depositAmount)
         {
-            Console.WriteLine(firstName+lastName);
-            Console.WriteLine("Account number: " + AccountNmbr);
-            Console.WriteLine("Balance: $" +balance);
+            this.accountBalance += depositAmount;
+            return accountBalance;
+        }
+        public virtual float Withdraw(float withdrawAmount)
+        {
+            this.accountBalance -= withdrawAmount;
+            return accountBalance;
+        }
+        public virtual void PrintAccountBalance()
+        {
+            Console.WriteLine("Current Balance $" + accountBalance);
+        }
+
+        public void PrintAccountInfo()
+        {
+            Console.WriteLine(firstName+ " " + lastName);
+            Console.WriteLine("Account number: " + accountNmbr);
+            Console.WriteLine("Account balance: $" + accountBalance);
+            
         }
     }
 }

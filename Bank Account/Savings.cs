@@ -25,8 +25,26 @@ namespace Bank_Account
         }
     
         //constructor 
-        public Savings()
-        { 
+        public Savings(string firstName,string lastName):base(firstName,lastName)
+        {
+            this.savingsBalance = 0f;
+            this.savingsAccountNmbr = 20009;
+        }
+
+        //methods
+        public override float Deposit(float depositAmount)
+        {
+            this.savingsBalance += depositAmount;
+            return base.Deposit(depositAmount);
+        }
+        public override float Withdraw(float withdrawAmount)
+        {
+            this.savingsBalance -= withdrawAmount;
+            return base.Withdraw(withdrawAmount);
+        }
+        public override void PrintAccountBalance()
+        {
+            Console.WriteLine("Savings account balance: $" + SavingsBalance);
         }
     }
 }
