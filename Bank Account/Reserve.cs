@@ -9,11 +9,11 @@ namespace Bank_Account
     class Reserve : Account
     {
         //fields for reserve 
-        protected float reserveBalance;
+        protected decimal reserveBalance;
         private int reserveAccountNmbr;
 
         //properties 
-        public float ReserveBalance
+        public decimal ReserveBalance
         {
             get { return this.reserveBalance; }
             set { this.reserveBalance = value; }
@@ -28,17 +28,17 @@ namespace Bank_Account
 
         public Reserve(string firstName,string lastName):base (firstName,lastName)
         {
-            this.reserveBalance = 0f;
+            this.reserveBalance = 450;
             this.reserveAccountNmbr = 34234;
         }
 
         //methods
-        public override float Deposit(float depositAmount)
+        public override decimal Deposit(decimal depositAmount)
         {
             this.reserveBalance += depositAmount;
             return base.Deposit(depositAmount);
         }
-        public override float Withdraw(float withdrawAmount)
+        public override decimal Withdraw(decimal withdrawAmount)
         {
             this.reserveBalance -= withdrawAmount;
             return base.Withdraw(withdrawAmount);
@@ -46,6 +46,7 @@ namespace Bank_Account
         public override void PrintAccountBalance()
         {
             Console.WriteLine("Reserve account balance: $" + ReserveBalance);
+            Console.WriteLine("Account Number: " + ReserveAccountNmbr);
         }
 
     }

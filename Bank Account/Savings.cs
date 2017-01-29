@@ -9,11 +9,11 @@ namespace Bank_Account
     class Savings : Account
     {
         //fields for savings
-        protected float savingsBalance;
+        private decimal savingsBalance;
         private int savingsAccountNmbr;
-
+       
         //properties 
-        public float SavingsBalance
+        public decimal SavingsBalance
         {
             get { return this.savingsBalance; }
             set { this.savingsBalance = value; }
@@ -27,17 +27,17 @@ namespace Bank_Account
         //constructor 
         public Savings(string firstName,string lastName):base(firstName,lastName)
         {
-            this.savingsBalance = 0f;
-            this.savingsAccountNmbr = 20009;
+            this.savingsBalance = 100;
+            this.savingsAccountNmbr = 90089;
         }
 
         //methods
-        public override float Deposit(float depositAmount)
+        public override decimal Deposit(decimal depositAmount)
         {
             this.savingsBalance += depositAmount;
             return base.Deposit(depositAmount);
         }
-        public override float Withdraw(float withdrawAmount)
+        public override decimal Withdraw(decimal withdrawAmount)
         {
             this.savingsBalance -= withdrawAmount;
             return base.Withdraw(withdrawAmount);
@@ -45,6 +45,7 @@ namespace Bank_Account
         public override void PrintAccountBalance()
         {
             Console.WriteLine("Savings account balance: $" + SavingsBalance);
+            Console.WriteLine("Account Number: " + SavingsAccountNmbr);
         }
     }
 }

@@ -11,9 +11,11 @@ namespace Bank_Account
         //fields in base class
         private string firstName;
         private string lastName;
+        private string accountType = "individual";
 
+        private long phoneNmbr = 4406230537;
         private int accountNmbr= 54546;
-        private float accountBalance=0.00f;
+        private decimal accountBalance;
         
 
         //properties in base class
@@ -27,11 +29,6 @@ namespace Bank_Account
             get { return this.lastName; }
             set { this.lastName = value; }
         }
-        public int AccountNmbr
-        {
-            get { return this.accountNmbr; }
-            set { this.accountNmbr = value; }
-        }
 
         //constructor base class
     
@@ -42,13 +39,14 @@ namespace Bank_Account
            
         }
 
+
         //method base class
-        public virtual float Deposit(float depositAmount)
+        public virtual decimal Deposit(decimal depositAmount)
         {
             this.accountBalance += depositAmount;
             return accountBalance;
         }
-        public virtual float Withdraw(float withdrawAmount)
+        public virtual decimal Withdraw(decimal withdrawAmount)
         {
             this.accountBalance -= withdrawAmount;
             return accountBalance;
@@ -60,9 +58,12 @@ namespace Bank_Account
 
         public void PrintAccountInfo()
         {
-            Console.WriteLine(firstName+ " " + lastName);
+            Console.WriteLine("User: "+firstName+ " " + lastName);
+            Console.WriteLine("Account type: " + accountType);
+            Console.WriteLine("User phone number: " + phoneNmbr);
             Console.WriteLine("Account number: " + accountNmbr);
             Console.WriteLine("Account balance: $" + accountBalance);
+            Console.WriteLine();
             
         }
     }

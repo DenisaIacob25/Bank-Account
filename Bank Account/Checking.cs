@@ -9,11 +9,11 @@ namespace Bank_Account
     class Checking : Account
     {
         //fields for checking
-        protected float checkingBalance;
+        protected decimal checkingBalance;
         private int checkingAccountNmbr;
 
         //properties
-        public float CheckingBalance
+        public decimal CheckingBalance
         {
             get { return this.checkingBalance; }
             set { this.checkingBalance = value; }
@@ -28,18 +28,18 @@ namespace Bank_Account
         //constructor
         public Checking(string firstName, string lastName):base(firstName,lastName)
         {
-            this.checkingBalance = 0f;
+            this.checkingBalance = 100m;
             this.checkingAccountNmbr = 67788;
         }
 
         //methods
-        public override float Deposit(float depostiAmount)
+        public override decimal Deposit(decimal depositAmount)
         {
-            this.checkingBalance += depostiAmount;
-            return base.Deposit(depostiAmount);
+            this.checkingBalance += depositAmount;
+            return base.Deposit(depositAmount);
         }
 
-        public override float Withdraw(float withdrawAmount)
+        public override decimal Withdraw(decimal withdrawAmount)
         {
             this.checkingBalance -= withdrawAmount;
             return base.Withdraw(withdrawAmount);
@@ -48,6 +48,7 @@ namespace Bank_Account
         public override void PrintAccountBalance()
         {
             Console.WriteLine("Savings account balance: $" + CheckingBalance);
+            Console.WriteLine("Account Number: " + CheckingAccountNmbr);
         }
     }
 }

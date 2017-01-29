@@ -16,9 +16,9 @@ namespace Bank_Account
 
 
             //intances of acccounts
-            Checking CheckingAccount = new Checking("Mad", "Money");
-            Reserve ReserveAccount = new Reserve("Mad", "Money");
-            Savings SavingsAccount = new Savings("Mad", "Money");
+            Checking CheckingAccount = new Checking("Jordan", "Belfort");
+            Reserve ReserveAccount = new Reserve("Jordan", "Belfort");
+            Savings SavingsAccount = new Savings("Jordan", "Belfort");
 
             //loop for menu
             while (true)
@@ -40,15 +40,17 @@ namespace Bank_Account
                 {
                     case 1:
                         SavingsAccount.PrintAccountInfo();
-                        break;
-
+                      break;
                     case 2:
+                        CheckingAccount.PrintAccountInfo();
                         CheckingAccount.PrintAccountBalance();
                         break;
                     case 3:
+                        SavingsAccount.PrintAccountInfo();
                         SavingsAccount.PrintAccountBalance();
                         break;
                     case 4:
+                        SavingsAccount.PrintAccountInfo();
                         ReserveAccount.PrintAccountBalance();
                         break;
                     case 5:
@@ -58,21 +60,24 @@ namespace Bank_Account
                         Console.WriteLine("3.Reserve Account");
                         int depositResponse = int.Parse(Console.ReadLine());
                         Console.WriteLine("Enter dollar amount");
-                        decimal depositAmount = decimal.Parse(Console.ReadLine());
+                        decimal userInputResponse = Convert.ToDecimal(Console.ReadLine());
 
                         switch (depositResponse)
                         {
                             case 1:
-                                CheckingAccount.Deposit(depositResponse);
+                                CheckingAccount.Deposit(userInputResponse);
                                 Console.WriteLine("New balance: $" + CheckingAccount.CheckingBalance);
+                                Console.ReadKey();
                                 break;
                             case 2:
-                                SavingsAccount.Deposit(depositResponse);
+                                SavingsAccount.Deposit(userInputResponse);
                                 Console.WriteLine("New balance: $" + SavingsAccount.SavingsBalance);
+                                Console.ReadKey();
                                 break;
                             case 3:
-                                ReserveAccount.Deposit(depositResponse);
+                                ReserveAccount.Deposit(userInputResponse);
                                 Console.WriteLine("New balance: $" + ReserveAccount.ReserveBalance);
+                                Console.ReadKey();
                                 break;
 
                             default:
@@ -86,21 +91,24 @@ namespace Bank_Account
                         Console.WriteLine("3.Reserve Account");
                         int withdrawResponse = int.Parse(Console.ReadLine());
                         Console.WriteLine("Enter dollar amount");
-                        decimal withdrawAmount = decimal.Parse(Console.ReadLine());
+                        decimal withdrawAmount = Convert.ToDecimal(Console.ReadLine());
 
                         switch (withdrawResponse)
                         {
                             case 1:
-                                CheckingAccount.Withdraw(withdrawResponse);
+                                CheckingAccount.Withdraw(withdrawAmount);
                                 Console.WriteLine("New balance: $" + CheckingAccount.CheckingBalance);
+                                Console.ReadKey();
                                 break;
                             case 2:
-                                SavingsAccount.Withdraw(withdrawResponse);
+                                SavingsAccount.Withdraw(withdrawAmount);
                                 Console.WriteLine("New balance: $" + SavingsAccount.SavingsBalance);
+                                Console.ReadKey();
                                 break;
                             case 3:
-                                ReserveAccount.Withdraw(withdrawResponse);
+                                ReserveAccount.Withdraw(withdrawAmount);
                                 Console.WriteLine("New balance: $" + ReserveAccount.ReserveBalance);
+                                Console.ReadKey();
                                 break;
 
                             default:
