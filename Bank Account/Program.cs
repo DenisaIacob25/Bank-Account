@@ -11,6 +11,9 @@ namespace Bank_Account
     {
         static void Main(string[] args)
         {
+            Console.ForegroundColor = ConsoleColor.DarkMagenta;
+            Console.BackgroundColor = ConsoleColor.White;
+
             Console.WriteLine("Welcome to Bank of Ohio");
             Console.WriteLine();
             Console.WriteLine("Please select one of the options below to being your transaction.");
@@ -21,7 +24,7 @@ namespace Bank_Account
             Reserve ReserveAccount = new Reserve("Jordan", "Belfort",1000);
             Savings SavingsAccount = new Savings("Jordan", "Belfort",1000);
 
-            //streamwriter - attempted to get stream writer to work for all fields but not sure how for all
+            //streamwriter - attempted to get stream writer to work for all fields but not sure how for all requirements
             StreamWriter savingsStream = new StreamWriter("..\\..\\savings.txt");
             using (savingsStream)
             {
@@ -41,6 +44,8 @@ namespace Bank_Account
                 checkingStream.WriteLine(CheckingAccount.FirstName + " " + CheckingAccount.LastName);
                 checkingStream.WriteLine("Account number: " + CheckingAccount.CheckingAccountNmbr);
                 checkingStream.WriteLine("Account type: Checking");
+                string depositAmount=null;
+                checkingStream.WriteLine("+" + depositAmount + " " + DateTime.Now); //getting date and time to show but it is now showing deposit amount 
                 //each transaction on line
                 //date and time of transaction DateTime.Now
                 //+ for deposit - for withdrawl
@@ -168,7 +173,8 @@ namespace Bank_Account
                         break;
 
                 }
-                //close streamwriters?
+
+                //close streamwriters
                 savingsStream.Close();
                 reserveStream.Close();
                 checkingStream.Close();

@@ -1,4 +1,5 @@
 Jordan Belfort
 Account number: 67788
 Account type: Checking
++ 1/30/2017 8:16:14 AM
 Account balance: $100
