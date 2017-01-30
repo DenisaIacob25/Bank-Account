@@ -14,9 +14,9 @@ namespace Bank_Account
         private string accountType = "individual";
 
         private long phoneNmbr = 4406230537;
-        private int accountNmbr= 54546;
+        private int accountNmbr = 54546;
         private decimal accountBalance;
-        
+
 
         //properties in base class
         public string FirstName
@@ -31,14 +31,12 @@ namespace Bank_Account
         }
 
         //constructor base class
-    
-        public Account(string firstName,string lastName)
+        public Account(string firstName, string lastName)
         {
             this.FirstName = firstName;
             this.LastName = lastName;
-           
-        }
 
+        }
 
         //method base class
         public virtual decimal Deposit(decimal depositAmount)
@@ -58,13 +56,13 @@ namespace Bank_Account
 
         public void PrintAccountInfo()
         {
-            Console.WriteLine("User: "+firstName+ " " + lastName);
+            Console.WriteLine("User: " + firstName + " " + lastName);
             Console.WriteLine("Account type: " + accountType);
             Console.WriteLine("User phone number: " + phoneNmbr);
             Console.WriteLine("Account number: " + accountNmbr);
             Console.WriteLine("Account balance: $" + accountBalance);
             Console.WriteLine();
-            
+
         }
     }
 }

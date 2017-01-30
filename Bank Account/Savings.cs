@@ -11,7 +11,7 @@ namespace Bank_Account
         //fields for savings
         private decimal savingsBalance;
         private int savingsAccountNmbr;
-       
+
         //properties 
         public decimal SavingsBalance
         {
@@ -23,9 +23,9 @@ namespace Bank_Account
             get { return this.savingsAccountNmbr; }
             set { this.savingsAccountNmbr = value; }
         }
-    
+
         //constructor 
-        public Savings(string firstName,string lastName):base(firstName,lastName)
+        public Savings(string firstName, string lastName) : base(firstName, lastName)
         {
             this.savingsBalance = 100;
             this.savingsAccountNmbr = 90089;
@@ -46,6 +46,7 @@ namespace Bank_Account
         {
             Console.WriteLine("Savings account balance: $" + SavingsBalance);
             Console.WriteLine("Account Number: " + SavingsAccountNmbr);
+            Console.WriteLine();
         }
     }
 }

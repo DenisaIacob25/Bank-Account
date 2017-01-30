@@ -26,7 +26,7 @@ namespace Bank_Account
 
         //constructor 
 
-        public Reserve(string firstName,string lastName):base (firstName,lastName)
+        public Reserve(string firstName, string lastName) : base(firstName, lastName)
         {
             this.reserveBalance = 450;
             this.reserveAccountNmbr = 34234;
@@ -47,6 +47,7 @@ namespace Bank_Account
         {
             Console.WriteLine("Reserve account balance: $" + ReserveBalance);
             Console.WriteLine("Account Number: " + ReserveAccountNmbr);
+            Console.WriteLine();
         }
 
     }

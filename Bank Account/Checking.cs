@@ -23,10 +23,9 @@ namespace Bank_Account
             get { return this.checkingAccountNmbr; }
             set { this.checkingAccountNmbr = value; }
         }
-        
 
         //constructor
-        public Checking(string firstName, string lastName):base(firstName,lastName)
+        public Checking(string firstName, string lastName) : base(firstName, lastName)
         {
             this.checkingBalance = 100m;
             this.checkingAccountNmbr = 67788;
@@ -49,6 +48,7 @@ namespace Bank_Account
         {
             Console.WriteLine("Savings account balance: $" + CheckingBalance);
             Console.WriteLine("Account Number: " + CheckingAccountNmbr);
+            Console.WriteLine();
         }
     }
 }
