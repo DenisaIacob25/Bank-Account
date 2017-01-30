@@ -20,10 +20,17 @@ namespace Bank_Account
             Reserve ReserveAccount = new Reserve("Jordan", "Belfort");
             Savings SavingsAccount = new Savings("Jordan", "Belfort");
 
-            //streamwriter
+            //streamwriter - attempted to get stream writer to work 
             StreamWriter savings = new StreamWriter("..\\..\\savings.txt");
             using (savings)
-            savings.WriteLine("Account type: Savings");
+            {
+                savings.WriteLine("User name: Jordan Belfort");
+                savings.WriteLine("Account type: Savings");
+            }
+
+            ////savings.WriteLine(SavingsAccount.SavingsAccountNmbr);
+            ////savings.WriteLine(SavingsAccount.FirstName);
+            ////savings.WriteLine(SavingsAccount.LastName);
 
             StreamWriter checking = new StreamWriter("..\\..\\checking.txt");
             using (checking)
