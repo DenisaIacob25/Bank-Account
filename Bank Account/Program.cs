@@ -16,29 +16,50 @@ namespace Bank_Account
             Console.WriteLine("Please select one of the options below to being your transaction.");
 
             //intances of acccounts
-            Checking CheckingAccount = new Checking("Jordan", "Belfort");
-            Reserve ReserveAccount = new Reserve("Jordan", "Belfort");
-            Savings SavingsAccount = new Savings("Jordan", "Belfort");
+            Account Account = new Account("Jordan", "Belfort", 1000);
+            Checking CheckingAccount = new Checking("Jordan", "Belfort",1000);
+            Reserve ReserveAccount = new Reserve("Jordan", "Belfort",1000);
+            Savings SavingsAccount = new Savings("Jordan", "Belfort",1000);
 
-            //streamwriter - attempted to get stream writer to work 
-            StreamWriter savings = new StreamWriter("..\\..\\savings.txt");
-            using (savings)
+            //streamwriter - attempted to get stream writer to work for all fields but not sure how for all
+            StreamWriter savingsStream = new StreamWriter("..\\..\\savings.txt");
+            using (savingsStream)
             {
-                savings.WriteLine("User name: Jordan Belfort");
-                savings.WriteLine("Account type: Savings");
+                savingsStream.WriteLine(SavingsAccount.FirstName + " " + SavingsAccount.LastName);
+                savingsStream.WriteLine("Account number: " + SavingsAccount.SavingsAccountNmbr);
+                savingsStream.WriteLine("Account type: Savings");
+                //each transaction on line
+                //date and time of transaction DateTime.Now
+                //+ for deposit - for withdrawl
+                //show transaction amount
+                savingsStream.WriteLine("Account balance: $" + SavingsAccount.SavingsBalance);
             }
 
-            ////savings.WriteLine(SavingsAccount.SavingsAccountNmbr);
-            ////savings.WriteLine(SavingsAccount.FirstName);
-            ////savings.WriteLine(SavingsAccount.LastName);
+            StreamWriter checkingStream = new StreamWriter("..\\..\\checking.txt");
+            using (checkingStream)
+            {
+                checkingStream.WriteLine(CheckingAccount.FirstName + " " + CheckingAccount.LastName);
+                checkingStream.WriteLine("Account number: " + CheckingAccount.CheckingAccountNmbr);
+                checkingStream.WriteLine("Account type: Checking");
+                //each transaction on line
+                //date and time of transaction DateTime.Now
+                //+ for deposit - for withdrawl
+                //show transaction amount
+                checkingStream.WriteLine("Account balance: $" + CheckingAccount.CheckingBalance);
+            }
 
-            StreamWriter checking = new StreamWriter("..\\..\\checking.txt");
-            using (checking)
-                checking.WriteLine("Account type: Checking");
-
-            StreamWriter reserve = new StreamWriter("..\\..\\reserve.txt");
-            using (reserve)
-                reserve.WriteLine("Account type: Reserve");
+            StreamWriter reserveStream = new StreamWriter("..\\..\\reserve.txt");
+            using (reserveStream)
+            {
+                reserveStream.WriteLine(ReserveAccount.FirstName +" " + ReserveAccount.LastName);
+                reserveStream.WriteLine("Account number: " + ReserveAccount.ReserveAccountNmbr);
+                reserveStream.WriteLine("Account type: Reserve");
+                //each transaction on line
+                //date and time of transaction DateTime.Now
+                //+ for deposit - for withdrawl
+                //show transaction amount
+                reserveStream.WriteLine("Account balance: $" + ReserveAccount.ReserveBalance);            
+            }
 
             while (true)
             {
@@ -58,19 +79,19 @@ namespace Bank_Account
                 switch (userResponse)
                 {
                     case 1:
-                        SavingsAccount.PrintAccountInfo();
+                        Account.PrintAccountInfo();
                         break;
                     case 2:
                         CheckingAccount.PrintAccountInfo();
                         CheckingAccount.PrintAccountBalance();
                         break;
                     case 3:
-                        SavingsAccount.PrintAccountInfo();
-                        SavingsAccount.PrintAccountBalance();
+                        ReserveAccount.PrintAccountInfo();
+                        ReserveAccount.PrintAccountBalance();
                         break;
                     case 4:
                         SavingsAccount.PrintAccountInfo();
-                        ReserveAccount.PrintAccountBalance();
+                        SavingsAccount.PrintAccountBalance();
                         break;
                     case 5:
                         Console.WriteLine("Where would you like to make a deposit?");
@@ -147,6 +168,10 @@ namespace Bank_Account
                         break;
 
                 }
+                //close streamwriters?
+                savingsStream.Close();
+                reserveStream.Close();
+                checkingStream.Close();
             }
         }
     }

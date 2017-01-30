@@ -1,1 +1,4 @@
+Jordan Belfort
+Account number: 67788
 Account type: Checking
+Account balance: $100

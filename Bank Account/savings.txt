@@ -1,2 +1,4 @@
-User name: Jordan Belfort
+Jordan Belfort
+Account number: 90089
 Account type: Savings
+Account balance: $100

@@ -1,1 +1,4 @@
+Jordan Belfort
+Account number: 34234
 Account type: Reserve
+Account balance: $450

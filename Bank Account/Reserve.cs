@@ -26,7 +26,7 @@ namespace Bank_Account
 
         //constructor 
 
-        public Reserve(string firstName, string lastName) : base(firstName, lastName)
+        public Reserve(string firstName, string lastName, decimal accountBalance) : base(firstName, lastName, accountBalance)
         {
             this.reserveBalance = 450;
             this.reserveAccountNmbr = 34234;

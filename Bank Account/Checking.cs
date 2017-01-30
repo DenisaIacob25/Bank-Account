@@ -25,7 +25,7 @@ namespace Bank_Account
         }
 
         //constructor
-        public Checking(string firstName, string lastName) : base(firstName, lastName)
+        public Checking(string firstName, string lastName, decimal accountBalance) : base(firstName, lastName, accountBalance)
         {
             this.checkingBalance = 100m;
             this.checkingAccountNmbr = 67788;
@@ -46,7 +46,7 @@ namespace Bank_Account
 
         public override void PrintAccountBalance()
         {
-            Console.WriteLine("Savings account balance: $" + CheckingBalance);
+            Console.WriteLine("Checking account balance: $" + CheckingBalance);
             Console.WriteLine("Account Number: " + CheckingAccountNmbr);
             Console.WriteLine();
         }

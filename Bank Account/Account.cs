@@ -29,12 +29,18 @@ namespace Bank_Account
             get { return this.lastName; }
             set { this.lastName = value; }
         }
+        public decimal AccountBalance
+        {
+            get { return this.accountBalance; }
+            set { this.accountBalance = value; }
+        }
 
         //constructor base class
-        public Account(string firstName, string lastName)
+        public Account(string firstName, string lastName, decimal accountBalance)
         {
             this.FirstName = firstName;
             this.LastName = lastName;
+            this.AccountBalance = accountBalance;
 
         }
 
